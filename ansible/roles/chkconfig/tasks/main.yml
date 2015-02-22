@@ -1,0 +1,5 @@
+## YAML Template.
+---
+- name: Install chkconfig
+  sudo: yes
+  apt: pkg=chkconfig state=latest

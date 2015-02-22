@@ -33,5 +33,7 @@
     - curl
     - sqlite
     - wget
+    - chkconfig
     - rabbitmq
     - redis
+    - blackfire

@@ -1,0 +1,20 @@
+## YAML Template.
+---
+- name: Register the packagecloud key
+  sudo: yes
+  shell: curl -s https://packagecloud.io/gpg.key | sudo apt-key add -
+
+- name: Add Blackfire to Sources.list
+  sudo: yes
+  shell: echo "deb http://packages.blackfire.io/debian any main" | sudo tee /etc/apt/sources.list.d/blackfire.list
+
+- name: Update Apt again
+  sudo: yes
+  apt: update_cache=yes
+  
+- name: Install Blackfire.io
+  sudo: yes
+  apt:  pkg=blackfire-agent state=latest
+  
+
+  
