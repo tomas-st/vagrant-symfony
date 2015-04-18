@@ -17,7 +17,7 @@
 
 - name: Configure PHP extensions
   sudo: yes
-  template: src={{ item.extension }}.tpl dest=/etc/php5/mods-available/{{ item.name }}.ini
+  template: src={{ item.template }}.tpl dest=/etc/php5/mods-available/{{ item.name }}.ini
   with_items: php_extensions
 
 - name: Enable PHP extensions
