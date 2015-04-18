@@ -18,6 +18,8 @@ server {
         rewrite     ^(.*)$ /app_dev.php/$1 last;
     }
 
+    client_max_body_size 50M;
+
     location ~ ^/(app|app_dev|config)\.php(/|$) {
         fastcgi_pass            unix:/var/run/php5-fpm.sock;
         fastcgi_buffer_size     16k;
