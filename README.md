@@ -46,7 +46,7 @@ Or, if you're using Git already in your project, you can use it as a submodule:
 
 ```
 $ cd your-symfony-project
-$ git submodule add https://github.com/kleiram/vagrant-symfony.git vagrant
+$ git submodule add git@github.com:tomas-st/vagrant-symfony.git vagrant
 ```
 
 After the project is added, you can start the environment like this:
