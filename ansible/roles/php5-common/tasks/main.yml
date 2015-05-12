@@ -15,10 +15,10 @@
   shell: echo "\n" | /usr/bin/pecl install {{ item.package }} creates=/usr/lib/php5/20121212/{{ item.name }}.so
   with_items: php_extensions
 
-- name: Configure PHP extensions
-  sudo: yes
-  template: src=template.tpl dest=/etc/php5/mods-available/{{ item.name }}.ini
-  with_items: php_extensions
+#- name: Configure PHP extensions
+#  sudo: yes
+#  template: src=template.tpl dest=/etc/php5/mods-available/{{ item.name }}.ini
+#  with_items: php_extensions
 
 - name: Configure PHP extensions Xdebug
   sudo: yes

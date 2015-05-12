@@ -3,7 +3,12 @@
   sudo: yes
   apt:  package=php5-fpm state=latest
 
-- ini_file: dest=/etc/php5/fpm/php.ini
-            option=upload_max_filesize
-            value=50M
-            backup=yes
+#- ini_file: dest=/etc/php5/fpm/php.ini
+#            section=PHP
+#            option=upload_max_filesize
+#            value=50M
+#            backup=yes
+
+#- ini_file: dest=
+#- lineinfile: dest=/etc/php5/fpm/php.ini regexp='^(.*)Xms(\d+)m(.*)$' line='\1Xms${xms}m\3' backrefs=yes
+- lineinfile: dest=/etc/php5/fpm/php.ini regexp='^upload_max_filesize' line='upload_max_filesize = 50M'
