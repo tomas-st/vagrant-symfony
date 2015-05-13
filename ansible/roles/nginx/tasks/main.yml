@@ -8,6 +8,12 @@
 
   - name: Change default nginx site
     sudo: yes
-    template: src=default.tpl dest=/etc/nginx/sites-available/default
+    template: src=picobello.tpl dest=/etc/nginx/sites-available/default
     notify: restart nginx
 
+#include before
+ upstream php {
+            server unix:/var/run/php5-fpm.sock;
+        }
+
+        include /etc/nginx/conf.d/*.conf;

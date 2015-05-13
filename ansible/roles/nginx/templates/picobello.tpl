@@ -1,8 +1,7 @@
 server {
-    listen 80;
 
-    server_name symfony;
-    root        {{ doc_root }};
+    server_name dev.bilderstuebchen.de;
+    root        /var/www/picobello/web;
 
     error_log   /var/log/nginx/symfony/error.log;
     access_log  /var/log/nginx/symfony/access.log;
@@ -21,7 +20,7 @@ server {
     client_max_body_size 50M;
 
     location ~ ^/(app|app_dev|config)\.php(/|$) {
-        fastcgi_pass            unix:/var/run/php5-fpm.sock;
+        fastcgi_pass            php;
         fastcgi_buffer_size     16k;
         fastcgi_buffers         4 16k;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
